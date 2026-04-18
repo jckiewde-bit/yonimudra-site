@@ -1,9 +1,13 @@
 import Link from "next/link";
+import { SplashOverlay } from "@/components/SplashOverlay";
 import { site } from "@/lib/site";
 
+// Home. The splash overlay sits on top and fades away on tap to reveal this.
 export default function HomePage() {
   return (
     <>
+      <SplashOverlay />
+
       <section className="mx-auto max-w-5xl px-5 sm:px-8 pt-20 pb-16">
         <h1 className="font-display text-4xl sm:text-6xl leading-[1.05] text-ink max-w-3xl">
           Creative arts therapy for the people words keep failing.
@@ -23,7 +27,7 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-5xl px-5 sm:px-8 py-12 grid gap-5 sm:grid-cols-3">
         {[
-          ["For the people words keep failing", "Veterans, survivors, and anyone talk therapy has bumped up against."],
+          ["For the people words keep failing", "Veterans, survivors, anyone talk therapy has bumped up against."],
           ["For high-functioners quietly unraveling", "You look fine. You're not. This is for that."],
           ["For people becoming someone new", "After the thing that changed everything."],
         ].map(([t, b]) => (
