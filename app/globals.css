@@ -7,16 +7,18 @@
    land; nothing else in the codebase should need to change.
    ───────────────────────────────────────────────────────────────────────────── */
 :root {
-  --brand-cream:     #faf6ee;   /* page background — warm off-white */
-  --brand-sage:      #7c8f7a;   /* primary — grounding, clinical without being clinical */
-  --brand-sage-ink:  #52634f;   /* darker sage for text on cream */
-  --brand-ochre:     #c89b3c;   /* accent — the creative-arts pigment */
-  --brand-rose:      #d4a5a5;   /* soft warm accent */
-  --brand-ink:       #1f1d1a;   /* body text */
-  --brand-charcoal:  #3c3a36;   /* secondary text */
-  --brand-line:      #e8e0d0;   /* subtle borders */
+  /* Pink palette, Jacqueline-provided primary.
+     Variable names kept for backwards compatibility — values are what matter. */
+  --brand-cream:     #fdf8fa;   /* page background — warm blush-white */
+  --brand-sage:      #ff66c4;   /* PRIMARY — her brand pink */
+  --brand-sage-ink:  #b8398a;   /* hover / deeper pink for accents and headings */
+  --brand-ochre:     #ff9ecb;   /* mid pink (watercolor-bloom accent) */
+  --brand-rose:      #ffd1e5;   /* soft blush (bloom + soft backgrounds) */
+  --brand-ink:       #2a1a23;   /* body text — warm plum-dark */
+  --brand-charcoal:  #5a4650;   /* secondary text */
+  --brand-line:      #f4dde7;   /* subtle blush borders */
 
-  --shadow-soft: 0 1px 2px rgba(31, 29, 26, 0.04), 0 8px 24px rgba(31, 29, 26, 0.06);
+  --shadow-soft: 0 1px 2px rgba(42, 26, 35, 0.04), 0 8px 24px rgba(184, 57, 138, 0.08);
 }
 
 @theme inline {
