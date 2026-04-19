@@ -15,9 +15,8 @@ function Header() {
   return (
     <header className="sticky top-0 z-40 backdrop-blur bg-cream/85 border-b border-line">
       <div className="mx-auto max-w-6xl px-5 sm:px-8 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 group">
-          <img src="/brand/logo.svg" alt="" aria-hidden className="h-8 w-8" />
-          <span className="font-display text-xl text-ink tracking-tight group-hover:text-sage-ink transition-colors">
+        <Link href="/" className="flex items-center group">
+          <span className="font-display font-semibold text-2xl text-ink tracking-tight group-hover:text-sage-ink transition-colors">
             {site.brand}
           </span>
         </Link>

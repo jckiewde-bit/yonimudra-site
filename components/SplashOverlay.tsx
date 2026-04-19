@@ -40,19 +40,19 @@ export function SplashOverlay() {
           transition={{ duration: reduce ? 0.15 : 0.9, ease: [0.22, 1, 0.36, 1] }}
         >
           <motion.div
-            className="relative flex flex-col items-center gap-6"
+            className="relative flex flex-col items-center gap-8"
             initial={reduce ? { opacity: 1 } : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: reduce ? 0 : 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
           >
             <motion.img
-              src="/brand/logo.svg"
-              alt="Yoni Mudra"
-              className="h-40 w-40 sm:h-56 sm:w-56"
-              initial={reduce ? { scale: 1 } : { scale: 0.94 }}
+              src="/brand/logo.png"
+              alt="Yoni Mudra — Creative Art Therapy & Coaching"
+              className="w-[min(85vw,560px)] h-auto"
+              initial={reduce ? { scale: 1 } : { scale: 0.96 }}
               animate={reduce
                 ? { scale: 1 }
-                : { scale: [1, 1.03, 1] }}
+                : { scale: [1, 1.02, 1] }}
               transition={reduce
                 ? { duration: 0 }
                 : { duration: 4.5, repeat: Infinity, ease: "easeInOut" }}

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Fredoka, Inter } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
 
@@ -9,14 +9,16 @@ const inter = Inter({
   display: "swap",
 });
 
-// Display font stand-in. When JA Jayagiri Sans .woff2 license arrives, replace
-// with next/font/local pointing at public/brand/fonts/ja-jayagiri-sans.woff2 —
-// var(--font-display) is consumed everywhere, no other files change.
-const display = Cormorant_Garamond({
+// Display font: Fredoka — rounded, bold, warm. Stand-in for JA Jayagiri Sans
+// (Jacqueline's actual brand font from Canva). Both share the same visual
+// DNA: rounded terminals, generous counters, friendly weight. When the real
+// JA Jayagiri Sans webfont license + .woff2 file arrive, swap this block for
+// next/font/local pointing at public/brand/fonts/ja-jayagiri-sans.woff2 —
+// --font-display is the single consumer, so no other files change.
+const display = Fredoka({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
