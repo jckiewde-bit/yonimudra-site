@@ -3,11 +3,8 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-// Front door. Solid pink field, black writing, logo centered with a gentle
-// breathing motion. Tap anywhere to exit — fades and scales away to reveal
-// the main page underneath.
-//
-// Shown once per session (sessionStorage).
+// Front door. Solid pink field, logo centered, explicit Enter button.
+// Shown once per session.
 export function SplashOverlay() {
   const [open, setOpen] = useState(true);
   const reduce = useReducedMotion();
@@ -27,11 +24,8 @@ export function SplashOverlay() {
   return (
     <AnimatePresence>
       {open && (
-        <motion.button
-          type="button"
-          onClick={dismiss}
-          aria-label="Enter the site"
-          className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden cursor-pointer focus:outline-none"
+        <motion.div
+          className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden"
           style={{ backgroundColor: "#ff66c4" }}
           initial={false}
           exit={reduce
@@ -40,7 +34,7 @@ export function SplashOverlay() {
           transition={{ duration: reduce ? 0.15 : 0.9, ease: [0.22, 1, 0.36, 1] }}
         >
           <motion.div
-            className="relative flex flex-col items-center gap-8"
+            className="relative flex flex-col items-center gap-10"
             initial={reduce ? { opacity: 1 } : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: reduce ? 0 : 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
@@ -57,16 +51,18 @@ export function SplashOverlay() {
                 ? { duration: 0 }
                 : { duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
             />
-            <motion.span
-              className="text-[11px] tracking-[0.4em] uppercase text-black"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+            <motion.button
+              type="button"
+              onClick={dismiss}
+              className="rounded-full bg-black text-white px-10 py-3 text-sm tracking-[0.35em] uppercase font-medium hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-black/40 transition-colors"
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.0, duration: 0.8 }}
             >
-              Tap to enter
-            </motion.span>
+              Enter
+            </motion.button>
           </motion.div>
-        </motion.button>
+        </motion.div>
       )}
     </AnimatePresence>
   );
