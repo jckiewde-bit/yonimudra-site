@@ -40,15 +40,52 @@ html, body { background: var(--brand-cream); color: var(--brand-ink); }
 
 body {
   font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
-  font-feature-settings: "ss01", "cv11";
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, .font-display {
-  font-family: var(--font-display), ui-serif, Georgia, serif;
-  font-weight: 500;
-  letter-spacing: -0.01em;
+  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
 }
+
+/* Signature (PARENTHESES) button pattern from the Growthway template. */
+.btn-parens {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+  padding: 0.9em 1.8em;
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  transition: transform 150ms ease, background-color 150ms ease;
+}
+.btn-parens::before { content: "("; opacity: 0.9; }
+.btn-parens::after  { content: ")"; opacity: 0.9; }
+.btn-parens:hover   { transform: translateY(-1px); }
+
+.btn-primary {
+  background: var(--brand-ink);
+  color: #fff;
+}
+.btn-primary:hover { background: #000; }
+
+.btn-accent {
+  background: var(--brand-sage);
+  color: var(--brand-ink);
+}
+.btn-accent:hover { background: var(--brand-sage-ink); color: #fff; }
+
+.btn-outline {
+  border: 1.5px solid var(--brand-ink);
+  color: var(--brand-ink);
+}
+.btn-outline:hover { background: var(--brand-ink); color: #fff; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

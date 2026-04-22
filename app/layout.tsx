@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
-import { Fredoka, Inter } from "next/font/google";
+import { DM_Sans, Fredoka } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
 
-const inter = Inter({
+// Body font: DM Sans — the Growthway template's primary. Geometric, warm,
+// readable at small sizes. Pairs cleanly with Fredoka for display.
+const inter = DM_Sans({
   variable: "--font-body",
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
   display: "swap",
 });
 
